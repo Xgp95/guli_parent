@@ -2,8 +2,10 @@ package com.example.eduservice.entity.vo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+//@ToString
 public class TeacherQuery {
 
     @ApiModelProperty(value = "教师名称,模糊查询")

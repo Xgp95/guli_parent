@@ -1,6 +1,7 @@
 package com.example.eduservice.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.commonutils.R;
 import com.example.eduservice.entity.EduTeacher;
@@ -22,7 +23,8 @@ public class EduTeacherController {
     @Autowired
     EduTeacherService eduTeacherService;
 
-    LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
+
+
 
     //    条件分页查询讲师
     @ApiOperation(value = "条件分页查询讲师")
@@ -35,6 +37,9 @@ public class EduTeacherController {
         Integer level = teacherQuery.getLevel();
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
+//        System.out.println(teacherQuery);
+//        QueryWrapper<EduTeacher> queryWrapper = new QueryWrapper<>();
+            LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
         if (!StringUtils.isEmpty(name)) {
             queryWrapper.like(EduTeacher::getName, name);
         }
