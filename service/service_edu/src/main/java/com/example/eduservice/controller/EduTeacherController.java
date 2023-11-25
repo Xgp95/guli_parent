@@ -1,12 +1,12 @@
 package com.example.eduservice.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.commonutils.R;
 import com.example.eduservice.entity.EduTeacher;
 import com.example.eduservice.entity.vo.TeacherQuery;
 import com.example.eduservice.service.EduTeacherService;
+import com.example.servicebase.exceptionhandler.GlException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,40 @@ public class EduTeacherController {
     @Autowired
     EduTeacherService eduTeacherService;
 
+    //    讲师修改
+    @ApiOperation(value = "讲师修改")
+    @PostMapping(value = "updateTeacher")
+    public R updateTeacher(@RequestBody EduTeacher eduTeacher) {
+        boolean flag = eduTeacherService.updateById(eduTeacher);
+        if (flag) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
+    }
 
+    //    根据id查询讲师
+    @ApiOperation(value = "根据id查询讲师")
+    @GetMapping(value = "findTeacherById/{id}")
+    public R findTeacherById(@PathVariable String id) {
+//        int i = 10 / 0;
+        EduTeacher eduTeacher = eduTeacherService.getById(id);
+        return R.ok().data("eduTeacher", eduTeacher);
+    }
 
+    //    添加讲师
+    @ApiOperation(value = "添加讲师")
+    @PostMapping(value = "addTeacher")
+    public R addTeacher(@RequestBody EduTeacher eduTeacher) {
+//        System.out.println(eduTeacher);
+        boolean b = eduTeacherService.save(eduTeacher);
+        if (b) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
+
+    }
 
     //    条件分页查询讲师
     @ApiOperation(value = "条件分页查询讲师")
@@ -39,7 +71,7 @@ public class EduTeacherController {
         String end = teacherQuery.getEnd();
 //        System.out.println(teacherQuery);
 //        QueryWrapper<EduTeacher> queryWrapper = new QueryWrapper<>();
-            LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
         if (!StringUtils.isEmpty(name)) {
             queryWrapper.like(EduTeacher::getName, name);
         }
@@ -80,6 +112,11 @@ public class EduTeacherController {
     @ApiOperation(value = "所有讲师列表")
     @GetMapping("findAll")
     public R findAll() {
+        try {
+            int i = 10 / 0;
+        } catch (Exception e) {
+            throw new GlException(20001, "执行了自定义异常处理.");
+        }
         List<EduTeacher> eduTeacherList = eduTeacherService.list();
         R r = R.ok().data("items", eduTeacherList);
         return r;

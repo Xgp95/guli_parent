@@ -12,9 +12,11 @@
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/service/service_edu/src/main/java/com/example/eduservice/entity/vo" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/main/java/com/example/eduservice/entity/vo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/logback-spring.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/logback-spring.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
