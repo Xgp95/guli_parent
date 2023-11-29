@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/eduservice/teacher")
 public class EduTeacherController {
     @Autowired
@@ -65,11 +66,11 @@ public class EduTeacherController {
                                   @PathVariable long size,
                                   @RequestBody(required = false) TeacherQuery teacherQuery) {
         Page<EduTeacher> eduTeacherPage = new Page<>(current, size);
+//        System.out.println(teacherQuery);
         String name = teacherQuery.getName();
         Integer level = teacherQuery.getLevel();
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
-//        System.out.println(teacherQuery);
 //        QueryWrapper<EduTeacher> queryWrapper = new QueryWrapper<>();
         LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
         if (!StringUtils.isEmpty(name)) {
@@ -84,6 +85,7 @@ public class EduTeacherController {
         if (!StringUtils.isEmpty(end)) {
             queryWrapper.le(EduTeacher::getGmtCreate, end);
         }
+        queryWrapper.orderByDesc(EduTeacher::getGmtModified);
         eduTeacherService.page(eduTeacherPage, queryWrapper);
         List<EduTeacher> teacherPageRecords = eduTeacherPage.getRecords();
         long total = eduTeacherPage.getTotal();
