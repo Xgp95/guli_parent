@@ -40,7 +40,8 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors
                                 //.any() // 扫描全部的接口，默认
                                 //.none() // 全部不扫描
-                                .basePackage("com.example.eduservice.controller") // 扫描指定包下的接口，最为常用
+//                                .basePackage("com.example.eduservice.controller") // 扫描指定包下的接口，最为常用
+                                .basePackage("com.example") // 扫描指定包下的接口，最为常用
                         //.withClassAnnotation(RestController.class) // 扫描带有指定注解的类下所有接口
                         //.withMethodAnnotation(PostMapping.class) // 扫描带有只当注解的方法接口
 
