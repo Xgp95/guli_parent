@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-<!--            <version>3.5.1</version>-->
+            <!--            <version>3.5.1</version>-->
         </dependency>
 
         <dependency>
@@ -35,7 +35,12 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.1.1</version>
+        </dependency>
     </dependencies>
 
 </project>
