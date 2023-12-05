@@ -16,6 +16,9 @@
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_edu/src/main/resources/logback-spring.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/example/exceldemo/ExcelDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/example/exceldemo/ExcelDemo1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/service_edu/src/test/java/com/example/exceldemo/TestEasyExcel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_oss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_oss/src/main/java/com/example/oss/OssApplication.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/service_oss/src/main/java/com/example/oss/controller" charset="UTF-8" />
